@@ -36,14 +36,14 @@ public class AuthorizationTest extends BaseUiTest {
         authPage.loginPasswordField.checkPlaceholder(TestData.getPlaceholderPassword());
     }
 
-    @Test(description = "Проверка корректности цвета кнопок")
+    @Test(description = "Корректность цвета кнопок")
     void checkColorButton() {
         AuthorizationPage authPage = new AuthorizationPage();
         authPage.loginAuthButton.checkColorBackground(TestData.getButtonLoginColorBackground());
         authPage.loginResetButton.checkColorBackground(TestData.getButtonResetColorBackground());
     }
 
-    @Test(description = "Проверка корректности цвета кнопки авторизации при наведении курсора")
+    @Test(description = "Корректность цвета кнопки авторизации при наведении курсора")
     void checkHoverColorButton() {
         AuthorizationPage authPage = new AuthorizationPage();
         authPage.loginAuthButton.hover();
@@ -59,7 +59,7 @@ public class AuthorizationTest extends BaseUiTest {
         authPage.loginPasswordField.checkValue(TestData.getTestPassword());
     }
 
-    @Test(description = "Проверка успешной авторизации")
+    @Test(description = "Успешная авторизация")
     void checkCorrectLogin() {
         AuthorizationPage authPage = new AuthorizationPage();
         authPage.loginEmailField.fill(TestData.getTestEmail());
@@ -69,7 +69,7 @@ public class AuthorizationTest extends BaseUiTest {
         authPage.loginResult.checkText("Login successful! Welcome, " + TestData.getTestEmail() +".");
     }
 
-    @Test(description = "Проверка корректности цвета поля с результатом успешной авторизации")
+    @Test(description = "Корректность цвета поля с результатом успешной авторизации")
     void checkColorResult() {
         AuthorizationPage authPage = new AuthorizationPage();
         authPage.loginEmailField.fill(TestData.getTestEmail());
@@ -80,7 +80,7 @@ public class AuthorizationTest extends BaseUiTest {
         authPage.loginResult.checkBorder(TestData.getResultColorBorder());
     }
 
-    @Test(description = "Проверка валидации пустого поля электронной почты формы авторизации")
+    @Test(description = "Валидация пустого поля электронной почты формы авторизации")
     void validationEmptyEmail() {
         AuthorizationPage authPage = new AuthorizationPage();
         authPage.loginAuthButton.click();
@@ -88,7 +88,7 @@ public class AuthorizationTest extends BaseUiTest {
         authPage.loginErrorEmail.checkText("Email is required.");
     }
 
-    @Test(description = "Проверка валидации пустого поля пароля формы авторизации")
+    @Test(description = "Валидации пустого поля пароля формы авторизации")
     void validationEmptyPassword() {
         AuthorizationPage authPage = new AuthorizationPage();
         authPage.loginAuthButton.click();
@@ -96,7 +96,7 @@ public class AuthorizationTest extends BaseUiTest {
         authPage.loginErrorPassword.checkText("Password is required.");
     }
 
-    @Test(description = "Проверка корректности цвета полей формы авторизации при введении невалидных значений")
+    @Test(description = "Корректность цвета полей формы авторизации при введении невалидных значений")
     void checkInvalidColorFields() {
         AuthorizationPage authPage = new AuthorizationPage();
         authPage.loginAuthButton.click();
